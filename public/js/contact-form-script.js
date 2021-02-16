@@ -22,7 +22,7 @@ function submitForm(){
 
     $.ajax({
         type: "POST",
-        url: "/",
+        url: "/blog/form",
         data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&message=" + message,
         success : function(text){
           console.log(text);

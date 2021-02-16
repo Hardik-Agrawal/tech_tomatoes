@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+      <title>Blog post</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/line-icons.css">
@@ -14,8 +15,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
 
-      <link rel="icon" href="./img/slider/tt.png" type="image/gif" sizes="16x16">
-      <link rel="stylesheet" href="./css/blogs.css" type="text/css" />
+      <link rel="icon" href="img/slider/tt.png" type="image/gif" sizes="16x16">
+      <link rel="stylesheet" href="css/blogs.css" type="text/css" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -79,6 +80,18 @@
     </div>
   <a href="/blog/show"><button class="btn btn-lg btn-warning" style="margin-right:1cm">Go to blogs</button></a>
   <a href="/blog/form"><button class="btn btn-lg btn-success">Make a blog</button></a>
+</div>
+</div>
+<div style="display: flex;justify-content: center; margin:2cm; flex-wrap:wrap" id="blogs">
+<% for( let index = 0; index < 8; index++ ) { %>
+<div class="card text-white bg-secondary mb-3" style="max-width: 20rem; margin:0.5cm">
+  <div class="card-header">Header</div>
+  <div class="card-body" >
+    <h5 class="card-title">Secondary card title</h5>
+    <p class="card-text" style="color: white;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<% } %>
 </div>
   </body>
 </html>
