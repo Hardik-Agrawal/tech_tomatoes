@@ -17,15 +17,15 @@ var firebase = require('firebase')
   let datab='';
   firebase.initializeApp(firebaseConfig);
   let database=firebase.database();
- 
+
 app.set('view engine','ejs');
 const nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'divyashankaranand@gmail.com',
-    pass: 'Divyashankar.1@2'
+    user: 'tech.tomatoes.india@gmail.com',
+    pass: 'ayush123'
   }
 });
 
@@ -39,7 +39,7 @@ res.sendFile(__dirname+'/public/index.html');
 
 app.post('/',(req,res)=>{
   var mailOptions = {
-    from: 'divyashankaranand@gmail.com',
+    from: 'tech.tomatoes.india@gmail.com',
     to: req.body.email,
     subject: req.body.msg_subject,
     html: `<strong> Name: </strong> ${req.body.name}<br>
@@ -48,7 +48,6 @@ app.post('/',(req,res)=>{
          <strong> message :</strong> ${req.body.message}<br>
             `
 };
-
 transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
@@ -82,11 +81,11 @@ app.post('/blog/form',(req,res)=>{
     // console.log(datab,typeof(datab));
     let keys=Object.keys(datab);
     // console.log(keys);
-   
+
    for (let i = 0; i < keys.length; i++) {
-     arr.push(datab[keys[i]]); 
+     arr.push(datab[keys[i]]);
     }
-    // console.log(arr); 
+    // console.log(arr);
   });
 app.get('/blog/show',(req,res)=>{
   res.render('mblogs',{data:arr});
